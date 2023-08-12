@@ -15,14 +15,16 @@ console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
 
 */
 
-function snakeToCamel(str) {
-    // Your code here
-}
+let productWithReduce = function(nums) {
+    return nums.reduce((acc, cv) => acc * cv)
+  };
 
+  console.log(productWithReduce([10, 3, 5, 2])); // 300
+  console.log(productWithReduce([4, 3])); // 12
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
     module.exports = snakeToCamel;
 } catch (e) {
     module.exports = null;
-}
+}
