@@ -15,10 +15,24 @@ console.log(shortestWord('do what you enjoy'));         // 'do'
 */
 
 let shortestWord = function(sentence) {
-  // Your code here
+  let wordArr = sentence.split(" ");
+  return wordArr.reduce((acc, currentVal) => {
+    if (acc.length < currentVal.length)
+    {
+      return acc;
+    }
+    if (acc.length === currentVal.length) {
+      return
+    }
+    else {
+      return currentVal;
+    }
+  })
 };
 
-// Your code here
+console.log(shortestWord('what a wonderful life'));     // 'a'
+console.log(shortestWord('the quick brown fox jumps')); // 'fox'
+console.log(shortestWord('do what you enjoy'));         // 'do'
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
@@ -26,4 +40,4 @@ try {
   module.exports = shortestWord;
 } catch (e) {
   module.exports = null;
-}
+}

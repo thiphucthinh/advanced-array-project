@@ -15,17 +15,32 @@ console.log(hipsterfy('panthers are great animals')); // 'panthrs ar gret animls
 */
 
 let removeLastVowel = function(word) {
-    // Your code here
+    let vowels = 'aeiou';
+
+  for(let i = word.length - 1; i >= 0; i--) {
+    if (vowels.includes(word[i])) {
+        return word.replace(word[i], "");
+    }
+  }
+  return word;
 };
 
-let hipsterfy = function(sentence) {
-    // Your code here
-};
+// let hipsterfy = function(sentence) {
+//     let wordArr = sentence.split(" ");
+//     for (let i = 0; i < wordArr.length; i++) {
+//         wordArr[i] = removeLastVowel(wordArr[i]);
+//     }
+//     return wordArr.join(" ");
+// };
 
 // alternative solution using Array.map
-// let hipsterfy = function(sentence) {
-//     return sentence.split(' ').map(removeLastVowel).join(' ');
-// };
+let hipsterfy = function(sentence) {
+    return sentence.split(' ').map(removeLastVowel).join(' ');
+};
+
+console.log(hipsterfy('When should everyone wake up?')); // 'Whn shold everyon wak p?'
+console.log(hipsterfy('get ready for our bootcamp')); // 'gt redy fr or bootcmp'
+console.log(hipsterfy('panthers are great animals')); // 'panthrs ar gret animls'
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
@@ -33,4 +48,4 @@ try {
     module.exports = hipsterfy;
 } catch (e) {
     module.exports = null;
-}
+}
