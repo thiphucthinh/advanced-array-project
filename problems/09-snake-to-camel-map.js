@@ -15,12 +15,18 @@ console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
 
 */
 
-let productWithReduce = function(nums) {
-    return nums.reduce((acc, cv) => acc * cv)
-  };
+let snakeToCamel = function (str) {
+    let wordArr = str.toLowerCase().split("_");
+    let newArr = wordArr.map(el => el[0].toUpperCase() + el.slice(1));
+    return newArr.join("");
+}
 
-  console.log(productWithReduce([10, 3, 5, 2])); // 300
-  console.log(productWithReduce([4, 3])); // 12
+// Example
+console.log(snakeToCamel('snakes_go_hiss')); // 'SnakesGoHiss'
+console.log(snakeToCamel('say_hello_world')); // 'SayHelloWorld'
+console.log(snakeToCamel('app_academy_is_cool')); // 'AppAcademyIsCool'
+console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
