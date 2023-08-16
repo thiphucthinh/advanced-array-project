@@ -14,21 +14,19 @@ console.log(shortestWord('do what you enjoy'));         // 'do'
 
 */
 
-let shortestWord = function(sentence) {
-  let wordArr = sentence.split(" ");
-  return wordArr.reduce((acc, currentVal) => {
-    if (acc.length < currentVal.length)
-    {
-      return acc;
+function shortestWord(sentence) {
+  const wordArr = sentence.split(" ");
+
+  return wordArr.reduce((shortest, current) => {
+    if (current.length < shortest.length) {
+      return current;
+    } else if (current.length === shortest.length) {
+      return current;
+    } else {
+      return shortest;
     }
-    if (acc.length === currentVal.length) {
-      return
-    }
-    else {
-      return currentVal;
-    }
-  })
-};
+  });
+}
 
 console.log(shortestWord('what a wonderful life'));     // 'a'
 console.log(shortestWord('the quick brown fox jumps')); // 'fox'
